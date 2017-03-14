@@ -23,4 +23,16 @@ public class ValidatorTest {
         assertFalse(validator.validNumber("IIII"));
     }
 
+    @Test
+    public void shouldReturnValidFourRepetitiveElementsNotInSequence() {
+        Validator validator = new Validator();
+        assertTrue(validator.validNumber("CCLXXXIX"));
+    }
+
+    @Test
+    public void shouldReturnInvalidFiveRepetitiveElementsNotInSequence() {
+        Validator validator = new Validator();
+        assertFalse(validator.validNumber("CCXLXXXIX"));
+    }
+
 }
